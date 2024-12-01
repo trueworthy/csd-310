@@ -22,37 +22,37 @@ try:
     db = mysql.connector.connect(**config)
     cursor = db.cursor()
 
-    # Display the studio tables
     cursor.execute("SELECT * FROM studio")
     result = cursor.fetchall()
-
+    
+    # Display the studio tables
     print("\n-- DISPLAYING Studio RECORDS --")
 
     for row in result:
         print("Studio id: {}\nStudio Name: {}\n".format(row[0], row[1]))
 
-    # Display the genre tables
     cursor.execute("SELECT * FROM genre")
     result = cursor.fetchall()
 
+    # Display the genre tables
     print("-- DISPLAYING Genre RECORDS --")
 
     for row in result:
         print("Genre id: {}\nGenre Name: {}\n".format(row[0], row[1]))
 
-    # Display films whose runtime is less than 120 minutes
     cursor.execute("SELECT film_name,film_runtime FROM film where film_runtime<120")
     result = cursor.fetchall()
 
+    # Display films whose runtime is less than 120 minutes
     print("-- DISPLAYING Film Runtime RECORDS --")
 
     for row in result:
         print("Film Name: {}\nRuntime: {}\n".format(row[0], row[1]))
 
-    # Display film names ordered by director
     cursor.execute("SELECT film_name,film_director FROM film ORDER BY film_director")
     result = cursor.fetchall()
 
+    # Display film names ordered by director
     print("-- DISPLAYING Director RECORDS in Order--")
 
     for row in result:
