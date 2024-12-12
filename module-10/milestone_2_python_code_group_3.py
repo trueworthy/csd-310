@@ -118,6 +118,9 @@ for x in myresult:
 	print(x)
 print(line_break)
 
+python_mysql.commit()
+print("All executions performed successfully.")
+
 #mycursor.execute("CREATE TABLE ")
 #mycursor.execute("INSERT INTO ")
 #
